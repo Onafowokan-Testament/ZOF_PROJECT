@@ -4,10 +4,9 @@ Course Code: CSC431
 
 ---DEPLOYMENT DETAILS---
 
-GitHub Repository: https://github.com/[YOUR_USERNAME]/ZOF_Project
+GitHub Repository: https://github.com/Onafowokan-Testament/ZOF_PROJECT
 
-Live Web GUI URL: https://zof-solver-[UNIQUE_ID].streamlit.app
-
+Live Web GUI URL: https://zof-project.streamlit.app/
 
 Deployment Platform: Streamlit Cloud
 
