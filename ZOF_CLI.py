@@ -214,7 +214,7 @@ class FixedPointIterationMethod(RootFinder):
             )
 
             if abs(f_x) < self.tolerance or error < self.tolerance:
-                return g_x, None
+                return x0, None
 
             x0 = g_x
             iteration += 1
@@ -292,6 +292,7 @@ def display_iterations(iterations):
     print("-" * 80)
 
     if not iterations:
+        print("No iterations completed.")
         return
 
     first_iter = iterations[0]
@@ -338,13 +339,20 @@ def main():
                 root, error = solver.solve(a, b, coefficients)
 
                 display_iterations(solver.iterations)
-                print(f"\nFinal Root: {root:.6f}")
-                print(f"Number of Iterations: {len(solver.iterations)}")
-                print(f"Final Error: {solver.iterations[-1]['error']:.2e}")
-                if error:
-                    print(f"Warning: {error}")
+                if root is not None:
+                    print(f"\nFinal Root: {root:.6f}")
+                    print(f"Number of Iterations: {len(solver.iterations)}")
+                    if solver.iterations:
+                        print(f"Final Error: {solver.iterations[-1]['error']:.2e}")
+                    print(
+                        "Status: Converged successfully"
+                        if not error
+                        else f"Warning: {error}"
+                    )
                 else:
-                    print("Status: Converged successfully")
+                    print("\nRoot: Not found")
+                    if error:
+                        print(f"Error: {error}")
 
             elif choice == "2":
                 coefficients = get_coefficients()
@@ -355,13 +363,20 @@ def main():
                 root, error = solver.solve(a, b, coefficients)
 
                 display_iterations(solver.iterations)
-                print(f"\nFinal Root: {root:.6f}")
-                print(f"Number of Iterations: {len(solver.iterations)}")
-                print(f"Final Error: {solver.iterations[-1]['error']:.2e}")
-                if error:
-                    print(f"Warning: {error}")
+                if root is not None:
+                    print(f"\nFinal Root: {root:.6f}")
+                    print(f"Number of Iterations: {len(solver.iterations)}")
+                    if solver.iterations:
+                        print(f"Final Error: {solver.iterations[-1]['error']:.2e}")
+                    print(
+                        "Status: Converged successfully"
+                        if not error
+                        else f"Warning: {error}"
+                    )
                 else:
-                    print("Status: Converged successfully")
+                    print("\nRoot: Not found")
+                    if error:
+                        print(f"Error: {error}")
 
             elif choice == "3":
                 coefficients = get_coefficients()
@@ -372,13 +387,20 @@ def main():
                 root, error = solver.solve(x0, x1, coefficients)
 
                 display_iterations(solver.iterations)
-                print(f"\nFinal Root: {root:.6f}")
-                print(f"Number of Iterations: {len(solver.iterations)}")
-                print(f"Final Error: {solver.iterations[-1]['error']:.2e}")
-                if error:
-                    print(f"Warning: {error}")
+                if root is not None:
+                    print(f"\nFinal Root: {root:.6f}")
+                    print(f"Number of Iterations: {len(solver.iterations)}")
+                    if solver.iterations:
+                        print(f"Final Error: {solver.iterations[-1]['error']:.2e}")
+                    print(
+                        "Status: Converged successfully"
+                        if not error
+                        else f"Warning: {error}"
+                    )
                 else:
-                    print("Status: Converged successfully")
+                    print("\nRoot: Not found")
+                    if error:
+                        print(f"Error: {error}")
 
             elif choice == "4":
                 coefficients = get_coefficients()
@@ -388,13 +410,20 @@ def main():
                 root, error = solver.solve(x0, coefficients)
 
                 display_iterations(solver.iterations)
-                print(f"\nFinal Root: {root:.6f}")
-                print(f"Number of Iterations: {len(solver.iterations)}")
-                print(f"Final Error: {solver.iterations[-1]['error']:.2e}")
-                if error:
-                    print(f"Warning: {error}")
+                if root is not None:
+                    print(f"\nFinal Root: {root:.6f}")
+                    print(f"Number of Iterations: {len(solver.iterations)}")
+                    if solver.iterations:
+                        print(f"Final Error: {solver.iterations[-1]['error']:.2e}")
+                    print(
+                        "Status: Converged successfully"
+                        if not error
+                        else f"Warning: {error}"
+                    )
                 else:
-                    print("Status: Converged successfully")
+                    print("\nRoot: Not found")
+                    if error:
+                        print(f"Error: {error}")
 
             elif choice == "5":
                 coefficients = get_coefficients("Enter coefficients for f(x):\n> ")
@@ -405,13 +434,20 @@ def main():
                 root, error = solver.solve(x0, coefficients, g_coefficients)
 
                 display_iterations(solver.iterations)
-                print(f"\nFinal Root: {root:.6f}")
-                print(f"Number of Iterations: {len(solver.iterations)}")
-                print(f"Final Error: {solver.iterations[-1]['error']:.2e}")
-                if error:
-                    print(f"Warning: {error}")
+                if root is not None:
+                    print(f"\nFinal Root: {root:.6f}")
+                    print(f"Number of Iterations: {len(solver.iterations)}")
+                    if solver.iterations:
+                        print(f"Final Error: {solver.iterations[-1]['error']:.2e}")
+                    print(
+                        "Status: Converged successfully"
+                        if not error
+                        else f"Warning: {error}"
+                    )
                 else:
-                    print("Status: Converged successfully")
+                    print("\nRoot: Not found")
+                    if error:
+                        print(f"Error: {error}")
 
             elif choice == "6":
                 coefficients = get_coefficients()
@@ -422,13 +458,20 @@ def main():
                 root, error = solver.solve(x0, h, coefficients)
 
                 display_iterations(solver.iterations)
-                print(f"\nFinal Root: {root:.6f}")
-                print(f"Number of Iterations: {len(solver.iterations)}")
-                print(f"Final Error: {solver.iterations[-1]['error']:.2e}")
-                if error:
-                    print(f"Warning: {error}")
+                if root is not None:
+                    print(f"\nFinal Root: {root:.6f}")
+                    print(f"Number of Iterations: {len(solver.iterations)}")
+                    if solver.iterations:
+                        print(f"Final Error: {solver.iterations[-1]['error']:.2e}")
+                    print(
+                        "Status: Converged successfully"
+                        if not error
+                        else f"Warning: {error}"
+                    )
                 else:
-                    print("Status: Converged successfully")
+                    print("\nRoot: Not found")
+                    if error:
+                        print(f"Error: {error}")
 
             else:
                 print("Invalid choice. Please try again.")
