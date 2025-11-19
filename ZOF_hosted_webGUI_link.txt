@@ -1,0 +1,14 @@
+Name:  ONAFOWOKAN TESTAMENT
+Matric Number: 21CG029905
+Course Code: CSC431
+
+---DEPLOYMENT DETAILS---
+
+GitHub Repository: https://github.com/[YOUR_USERNAME]/ZOF_Project
+
+Live Web GUI URL: https://zof-solver-[UNIQUE_ID].streamlit.app
+
+
+Deployment Platform: Streamlit Cloud
+
+
